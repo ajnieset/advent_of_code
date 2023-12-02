@@ -13,10 +13,9 @@ def solve(input: list[str]) -> int:
         first = None
         last = None
         for char in line:
-            try:
-                int(char)
-                temp = str(char)
-            except Exception:
+            if char.isdigit():
+                temp = int(char)
+            else:
                 temp = None
             
             if first is None:

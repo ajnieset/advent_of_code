@@ -3,9 +3,9 @@ import copy
 
 MAX_COLORS = {'red': 12, 'green': 13, 'blue': 14}
 
-def get_input() -> dict[int,list[dict[str,int]]]:
+def get_input(filename: str) -> dict[int,list[dict[str,int]]]:
     inputs:dict[int, list] = {}
-    with open("input.csv", "r") as file:
+    with open(filename, "r") as file:
         for line in file:
             start = line.find(':') + 1
             game = line[start:]
@@ -37,5 +37,5 @@ def solve(inputs: dict[int,list[dict[str,int]]]):
     return sum(games.keys())
 
 if __name__ == "__main__":
-    inputs = get_input()
+    inputs = get_input("input.csv")
     print(f"solution = {solve(inputs)}")

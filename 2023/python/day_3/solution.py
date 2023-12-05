@@ -17,7 +17,7 @@ def get_input(filename: str):
 
     return inputs
 
-def get_positions_to_check(line, row_count: int, row: int, col: int):
+def get_positions_to_check(line, row_count: int, row: int, col: int) -> list[tuple[int,int]]:
     pos_to_check = []
     if row != 0:
         pos_to_check.append((0, -1))
